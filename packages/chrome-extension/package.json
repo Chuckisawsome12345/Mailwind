@@ -1,0 +1,10 @@
+{
+  "name": "@jait/chrome-extension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@jait/wrapper": "1.0.0",
+    "@jait/ui": "1.0.0"
+  }
+}
