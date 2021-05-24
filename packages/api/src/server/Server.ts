@@ -1,7 +1,8 @@
-import dotenv from "dotenv";
+import { auth as AuthRoute } from "../routes/AuthRoute";
 import { logger } from "../config/Logger";
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import { Consola } from "consola";
 
 export class Server {
@@ -51,5 +52,7 @@ export class Server {
         .status(200)
         .json({ success: true, message: `Jait API version ${this.version}` });
     });
+
+    this.app.use("/api/v1", AuthRoute);
   }
 }
