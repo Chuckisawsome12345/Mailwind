@@ -1,4 +1,4 @@
-import { logger } from "../logger/Logger";
+import { logger } from "../config/Logger";
 import { Config } from "../../Config";
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
