@@ -1,11 +1,10 @@
+import dotenv from "dotenv";
 import { logger } from "../config/Logger";
-import { Config } from "../../Config";
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { Consola } from "consola";
 
 export class Server {
-  public PORT = Config.JAIT_API_PORT;
   public version: string = "1.0";
   public app: express.Application;
   public logger: Consola = logger;
@@ -23,9 +22,9 @@ export class Server {
     this.setRequestLogger();
     this.setRoutes();
 
-    this.app.listen(this.PORT, () => {
+    this.app.listen(process.env.JAIT_API_PORT, () => {
       this.logger.success(
-        `Jait API version ${this.version} started on port ${this.PORT}`
+        `Jait API version ${this.version} started on port ${process.env.JAIT_API_PORT}`
       );
     });
   }
@@ -34,6 +33,8 @@ export class Server {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
     this.app.use(cors());
+
+    dotenv.config();
   }
 
   private setRequestLogger() {
