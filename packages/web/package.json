@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@jait/ui": "1.0.0"
+    "@jait/ui": "1.0.0",
+    "@jait/wrapper": "1.0.0"
   }
 }

@@ -2,8 +2,5 @@
   "name": "@jait/wrapper",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "@jait/api": "1.0.0"
-  }
+  "license": "MIT"
 }
