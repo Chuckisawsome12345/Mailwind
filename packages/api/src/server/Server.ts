@@ -23,9 +23,9 @@ export class Server {
     this.setRequestLogger();
     this.setRoutes();
 
-    this.app.listen(process.env.JAIT_API_PORT, () => {
+    this.app.listen(process.env.MAILWIND_API_PORT, () => {
       this.logger.success(
-        `Jait API version ${this.version} started on port ${process.env.JAIT_API_PORT}`
+        `Mailwind API version ${this.version} started on port ${process.env.MAILWIND_API_PORT}`
       );
     });
   }
