@@ -1,9 +1,11 @@
+import querystring from "querystring";
 import axios from "axios";
+
 export class AuthHelper {
-  public async getGitHubUser(code: string) {
+  public async fetchGitHubUser(code: string) {
     const githubToken = await axios
       .post(
-        `https://github.com/login/oauth/access_token?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}&code=${code}`
+        `https://github.com/login/oauth/access_token?client_id=${process.env.MAILWIND_GITHUB_CLIENT_ID}&client_secret=${process.env.MAILWIND_GITHUB_CLIENT_SECRET}&code=${code}`
       )
       .then((res) => res.data)
 

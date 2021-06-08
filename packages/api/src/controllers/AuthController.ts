@@ -10,6 +10,11 @@ export class AuthController {
 
     code ? code : new Error("no code provided");
     path ? path : new Error("No path provided");
+
+    const user = await helper.fetchGitHubUser(code);
+    console.log(user);
+
+    res.redirect(path);
   }
 
   public authGitHubMe(req: Request, res: Response) {}
