@@ -50,7 +50,10 @@ export class Server {
     this.app.get("/", (req: Request, res: Response) => {
       res
         .status(200)
-        .json({ success: true, message: `Jait API version ${this.version}` });
+        .json({
+          success: true,
+          message: `Mailwind API version ${this.version}`,
+        });
     });
 
     this.app.use("/api/v1", AuthRoute);
