@@ -1,14 +1,21 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
+import Link from "next/link";
+import { Flex, Box, Heading, Spacer, Button } from "@chakra-ui/react";
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Mailwind</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
+  <Layout>
+    <Flex>
+      <Box p="2">
+        <Heading size="md">Chakra App</Heading>
+      </Box>
+      <Spacer />
+      <Box>
+        <Button colorScheme="teal" mr="4">
+          Sign Up
+        </Button>
+        <Button colorScheme="teal">Log in</Button>
+      </Box>
+    </Flex>
   </Layout>
 );
 
